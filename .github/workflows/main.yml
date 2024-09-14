@@ -1,27 +1,41 @@
-name: CI Pipeline
+name: Test Python Application
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.12, 3.10]
+        python-version: [3.12, 3.10]  # Correct supported Python versions
 
     steps:
+
+      - name: Show current directory and files
+        run: ls -al
+
       - name: Check out the repository
         uses: actions/checkout@v2
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
+      - name: Show the current directory
+        run: pwd
+
+      - name: List all files in the directory
+        run: ls -al
+
+      - name: List all files recursively
+        run: ls -R
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+          pip install pytest
 
       - name: Run tests
         run: |
