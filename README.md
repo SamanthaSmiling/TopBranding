@@ -40,17 +40,21 @@ The structure of the project is as follows:
 
 ```text
 - ./
+    - LICENSE
     - requirements.txt
+    - READMEtmp.md
     - BrandGlimpse.py
     - Brand.code-workspace
     - README.md
+    - images/
+        - prediction.png
+        - overview.png
+        - sector.png
+        - brand.png
     - ODPSmocker/
         - MockRecordGenerator.py
         - dataMocker.py
         - readme_gnr.py
     - data/
-        - product_data.csv
-        - store_data.csv
-        - user_data.csv
         - transaction_data.csv
 ```
