@@ -6,6 +6,10 @@ from datetime import datetime
 import plotly.graph_objects as go
 import textwrap
 
+def route_test():
+    
+    return 8
+
 def read_file(filename):
     df = pd.read_csv(filename)
     return df

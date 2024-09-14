@@ -2,13 +2,13 @@
 Test goes here
 """
 import pytest
-from brand_glimpse import read_file, glimpse
+from brand_glimpse import route_test
 
 
 
 
 
 def test_func():
-    assert read_file("data/transaction_data.csv") == True
+    assert route_test() == 8
     print("You are Reading correctly")
 
